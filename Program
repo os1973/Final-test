@@ -1,0 +1,27 @@
+/*
+Написать программу, которая из имеющегося массива строк формирует массив из строк, длина которых меньше либо равна 3 символам.
+
+["Hello","2","World",":-)"]->["2",":-)"]
+["1234","1567","-2","computer scince"]->["-2"]
+["Russia","Denmark","Kazan"]->[]
+*/
+
+string[] array =
+{
+    "Russia",
+    "Denmark",
+    "Kazan"
+};
+
+var result = new string[array.Length];
+var realSize = 0;
+foreach (var value in array)
+{
+    if (value.Length <= 3)
+    {
+        result[realSize] = value;
+        realSize++;
+    }
+}
+
+Console.WriteLine(string.Join(Environment.NewLine, result, 0, realSize));
